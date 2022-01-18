@@ -27,5 +27,5 @@ else
     Console.WriteLine("Your color is cyan!");
 }
 
-Console.ReadLine();
+Console.ReadKey();
 
