@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
 
-for (int i = 0; i < 3; i++)
+/*for (int i = 0; i < 3; i++)
 {
     Console.WriteLine("Iteration {0}", i);
     switch (Console.ReadLine())
@@ -39,14 +38,19 @@ for (int i = 0; i < 3; i++)
         break;
     }
     
-}
+}*/
 
 int j = 0;
 
-while(j < 3)
+
+while (j < 3)
 {
+    Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
     Console.WriteLine("Iteration {0}", j);
-    switch(Console.ReadLine())
+
+    var text = Console.ReadLine();
+
+    switch (text)
     {
         case "red":
 
@@ -81,10 +85,16 @@ while(j < 3)
             break;
     }
 
+    if (text == "stop")
+    {
+        Console.WriteLine("Цикл остановлен");
+        break;
+    }
+
     j++;
 }
 
-int t = 0;
+/*int t = 0;
 
 do
 {
@@ -128,5 +138,5 @@ do
 
 }
 while (t < 3);
-
+*/
 Console.ReadKey();
