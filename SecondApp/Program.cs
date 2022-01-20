@@ -189,7 +189,7 @@ Console.WriteLine("Введите своё имя");
 
 var name = Console.ReadLine();
 
-char[] revers = new char[name.Length];
+/*char[] revers = new char[name.Length];
 
 for (int i = 0; i < revers.Length; i++)
 {
@@ -199,6 +199,12 @@ for (int i = 0; i < revers.Length; i++)
 foreach (var ch in revers)
 {
     Console.Write(ch + " ");
+}
+*/
+
+for (int i = name.Length - 1; i >= 0; i--)
+{
+    Console.Write(name[i] + " ");
 }
 
 Console.ReadKey();
