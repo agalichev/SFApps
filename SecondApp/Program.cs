@@ -169,7 +169,7 @@ Console.WriteLine("Итоговая сумма: {0}", sum);*/
 
 // Unit 4.3 Arrays
 
-Console.WriteLine("Введите своё имя");
+/*Console.WriteLine("Введите своё имя");
 
 var name = Console.ReadLine();
 
@@ -181,4 +181,24 @@ foreach(var letter in name)
 }
 
 Console.WriteLine("Последняя буква в вашем имени: {0}", name[name.Length - 1]);
+*/
+
+// Task 4.3.7
+
+Console.WriteLine("Введите своё имя");
+
+var name = Console.ReadLine();
+
+char[] revers = new char[name.Length];
+
+for (int i = 0; i < revers.Length; i++)
+{
+    revers[i] = name[name.Length - (i + 1)];
+}
+
+foreach (var ch in revers)
+{
+    Console.Write(ch + " ");
+}
+
 Console.ReadKey();
