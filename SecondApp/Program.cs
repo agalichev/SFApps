@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+// Unit 4.2: Tasks 4.2.9 - 4.2.11, 4.2.15
+
 /*for (int i = 0; i < 3; i++)
 {
     Console.WriteLine("Iteration {0}", i);
@@ -40,7 +42,7 @@
     
 }*/
 
-int j = 0;
+/*int j = 0;
 
 
 while (j < 3)
@@ -92,7 +94,7 @@ while (j < 3)
     }
 
     j++;
-}
+}*/
 
 /*int t = 0;
 
@@ -139,4 +141,44 @@ do
 }
 while (t < 3);
 */
+
+// Code from screencast
+
+/*int sum = 0;
+
+while (true)
+{
+    Console.WriteLine("Ввведите число");
+
+    var number = Convert.ToInt32(Console.ReadLine());
+
+    if (number < 0 )
+    {
+        continue;
+    }
+
+    else if (number == 0)
+    {
+        break;
+    }
+
+    sum += number;
+}
+
+Console.WriteLine("Итоговая сумма: {0}", sum);*/
+
+// Unit 4.3 Arrays
+
+Console.WriteLine("Введите своё имя");
+
+var name = Console.ReadLine();
+
+Console.WriteLine("Ваше имя по буквам: ");
+
+foreach(var letter in name)
+{
+    Console.Write(letter + " ");
+}
+
+Console.WriteLine("Последняя буква в вашем имени: {0}", name[name.Length - 1]);
 Console.ReadKey();
