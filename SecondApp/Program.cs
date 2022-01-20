@@ -207,4 +207,11 @@ for (int i = name.Length - 1; i >= 0; i--)
     Console.Write(name[i] + " ");
 }
 
+int[,] array = { { 1, 3, 5 }, { 2, 4, 6 } };
+
+foreach (var item in array)
+{
+    Console.Write(item + " ");
+}
+
 Console.ReadKey();
