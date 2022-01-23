@@ -371,11 +371,11 @@ while (true)
 
             int temp;
 
-            for (int i = 0; i < arr.GetUpperBound(0) + 1; i++)
+            for (int i = 0; i <= arr.GetUpperBound(0); i++)
             {
-                for (int j = 0; j < arr.GetUpperBound(1) + 1; j++)
+                for (int j = 0; j <= arr.GetUpperBound(1); j++)
                 {
-                    for (int k = j + 1; k < arr.GetUpperBound(1) + 1; k++)
+                    for (int k = j + 1; k <= arr.GetUpperBound(1); k++)
                     {
                         if (arr[i, j] > arr[i, k])
                         {
