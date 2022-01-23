@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-// Unit 4.2: Tasks 4.2.9 - 4.2.11, 4.2.15
+//----- Unit 4.2: Tasks 4.2.9 - 4.2.11, 4.2.15 -----
 
 /*for (int i = 0; i < 3; i++)
 {
@@ -142,7 +142,7 @@ do
 while (t < 3);
 */
 
-// Code from screencast
+//----- Code from screencast -----
 
 /*int sum = 0;
 
@@ -167,7 +167,7 @@ while (true)
 
 Console.WriteLine("Итоговая сумма: {0}", sum);*/
 
-// Unit 4.3 Arrays
+//----- Unit 4.3 Arrays -----
 
 /*Console.WriteLine("Введите своё имя");
 
@@ -183,7 +183,7 @@ foreach(var letter in name)
 Console.WriteLine("Последняя буква в вашем имени: {0}", name[name.Length - 1]);
 */
 
-// Task 4.3.7
+//----- Task 4.3.7 -----
 
 /*Console.WriteLine("Введите своё имя");
 
@@ -215,7 +215,7 @@ foreach (var item in array)
 }
 */
 
-// Task 4.3.11 Array.Columns first
+//----- Task 4.3.11 Array.Columns first -----
 
 /*int[,] array = {{ 1, 2, 3, }, { 5, 6, 7 }, { 8, 9, 10 }, { 11, 12, 13 }};
 
@@ -231,7 +231,7 @@ for (int i = 0; i < array.GetUpperBound(1) + 1; i++)
 }
 */
 
-// Task 4.3.12 Array sort, Task 4.3.13 Array elemnsts sum
+//----- Task 4.3.12 Array sort, Task 4.3.13 Array elemnsts sum -----
 
 /*var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
 
@@ -279,9 +279,9 @@ foreach(var color in favcolors)
 }
 */
 
-// Task 4.3.14 "Jagged array"
+//----- Task 4.3.14 "Jagged array" -----
 
-int[][] array = new int[3][];
+/*int[][] array = new int[3][];
 
 array[0] = new int[2] { 1, 2 };
 array[1] = new int[3] { 1, 2, 3 };
@@ -294,5 +294,135 @@ foreach(var fitems in array)
         Console.Write(sitems + " ");
     }
 }
+*/
 
+//----- Task 4.3.15 - Task 4.3.17 "Amount of positive numbers in one-dimensional and two-dimensional arrays. Two-dimensional array sort" -----
+
+while (true)
+{
+
+    int n, rank;
+
+    Console.Write("Введите ранк массива, с которым будете работать, или введите stop: ");
+
+    var text = Console.ReadLine();
+
+    if (text == "stop")
+    {
+        Console.WriteLine("Цикл остановлен");
+        break;
+    }
+
+    rank = Convert.ToInt32(text);
+
+    switch (rank)
+    {
+        // For Task 4.3.15
+        case 1:
+
+            Console.Write("Задайте размерность одномерного массива: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            int[] array = new int[n];
+
+            var AmountOne = 0;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write("Введите число {0}-е: ", i + 1);
+
+                array[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            foreach (var item in array)
+            {
+                if (item > 0)
+                {
+                    Console.Write(item + " ");
+                    AmountOne++;
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Количество положительных элементов в массиве array: {0}", AmountOne);
+
+            Console.WriteLine();
+            Console.WriteLine("//Код из материала");
+
+            AmountOne = 0;
+            for (int j = 0; j < array.Length; j++)
+            {
+                if (array[j] > 0)
+                {
+                    AmountOne++;
+                }
+            }
+
+            Console.WriteLine("Количество положительных элементов в массиве array: {0}", AmountOne);
+
+            break;
+
+        // For Task 4.3.16 - 4.3.17
+        case 2:
+
+            int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
+
+            var AmountTwo = 0;
+
+            int temp;
+
+            for (int i = 0; i < arr.GetUpperBound(0) + 1; i++)
+            {
+                for (int j = 0; j < arr.GetUpperBound(1) + 1; j++)
+                {
+                    for (int k = j + 1; k < arr.GetUpperBound(1) + 1; k++)
+                    {
+                        if (arr[i, j] > arr[i, k])
+                        {
+                            temp = arr[i, k];
+                            arr[i, k] = arr[i, j];
+                            arr[i, j] = temp;
+                        }
+                    }
+
+                    if (arr[i, j] > 0)
+                    {
+                        AmountTwo++;
+                    }
+
+                    Console.Write(arr[i, j] + " ");
+
+                }
+
+                Console.WriteLine();
+
+            }
+
+            foreach (var item in arr)
+            {
+                Console.Write(item + " ");
+            }
+
+            
+
+            Console.WriteLine();
+            Console.WriteLine("Количество положительных элементов в массиве arr: {0}", AmountTwo);
+
+            break;
+
+        default:
+
+            if (rank < 0)
+            {
+                Console.WriteLine("Ранк не может быть меньше 1-го");
+            }
+            else if (rank > 2)
+            {
+                Console.WriteLine("Ранк должен быть не больше 2-х");
+            }
+
+            continue;
+
+    }
+}
 Console.ReadKey();
