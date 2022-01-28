@@ -104,6 +104,48 @@
 
 #endregion
 
+#region Task 5.1.6 "Method GetArrayFromConsole()"
+
+//static int[] GetArrayFromConsole()
+//{
+//    var myarray = new int[5];
+
+//    for (int i = 0; i < myarray.Length; i++)
+//    {
+//        Console.Write($"Enter array elemnt {i + 1}: ");
+//        myarray[i] = int.Parse(Console.ReadLine());
+//    }
+
+//    int temp;
+
+//    for (int i = 0; i < myarray.Length; i++)
+//    {
+//        for (int j = i + 1; j < myarray.Length; j++)
+//        {
+//            if (myarray[i] > myarray[j])
+//            {
+//                temp = myarray[j];
+//                myarray[j] = myarray[i];
+//                myarray[i] = temp;
+//            }
+//        }
+//    }
+
+//    for (int i = 0;i < myarray.Length; i++)
+//    {
+//        Console.Write(myarray[i] + " ");
+//    }
+
+//    return myarray;
+
+//}
+
+//GetArrayFromConsole();
+
+#endregion
+
+//----- Unit 5.2 "Methods parameters"
+
 
 
 Console.ReadKey();
