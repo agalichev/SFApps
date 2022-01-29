@@ -146,7 +146,7 @@
 
 //----- Unit 5.2 "Methods parameters"
 
-#region Task 5.2.2, Task 5.2.3, Task 5.2.5 "Parameters in the method ShowColor()"
+#region Task 5.2.2, Task 5.2.3, Task 5.2.5 "Parameters in the ShowColor() method"
 
 //static string ShowColor(string username, int userage)
 //{
@@ -225,7 +225,7 @@
 
 #endregion
 
-#region Task 5.2.8 "Break the method GetArrayFromConsole(), Task 5.2.14 - Task 5.2.16 "Optional parameters"
+#region Task 5.2.8 "Break a method GetArrayFromConsole(), Task 5.2.14 - Task 5.2.16 "Optional parameters", Task 5.2.17 - Task 5.2.18 "Create a ShowArray() method and call it"
 
 static int[] GetArrayFromConsole(int num = 5)
 {
@@ -262,16 +262,29 @@ static int[] SortArray(int[] sortedarray)
 
 }
 
-Console.WriteLine("Calling method GetArrayFromConsole()");
-var array = GetArrayFromConsole(3);
-
-Console.WriteLine("Calling method SortArray()");
-var sortedarray = SortArray(array);
-
-for (int i = 0; i < sortedarray.Length; i++)
+static void ShowArray(int[] array, bool IsSort = false)
 {
-    Console.Write(sortedarray[i] + " ");
+    var temp = array;
+    if (IsSort)
+    {
+        Console.WriteLine("Calling method SortArray()");
+        temp = SortArray(array);
+    }
+
+    foreach (var item in temp)
+    {
+        Console.Write(item + " ");
+    }
+
 }
+
+Console.WriteLine("Calling method GetArrayFromConsole()");
+var array = GetArrayFromConsole(10);
+
+Console.Write("Write, given array needs to sort or no (true / false): ");
+bool IsSort = Convert.ToBoolean(Console.ReadLine());
+
+ShowArray(array, IsSort);
 
 #endregion
 
