@@ -191,9 +191,9 @@ static string ShowColor(string username, int userage)
     return color;
 }
 
-static void ShowColors(params string[] favcolors)
+static void ShowColors(string username, params string[] favcolors)
 {
-    Console.WriteLine("Your favorite colors:");
+    Console.WriteLine($"{username}, your favorite colors:");
     foreach (var color in favcolors)
     {
         Console.WriteLine(color);
@@ -221,7 +221,7 @@ for (int i = 0; i < favcolors.Length; i++)
     favcolors[i] = ShowColor(name, age);
 }
 
-ShowColors(favcolors[0], favcolors[2]);
+ShowColors(name, favcolors);
 
 #endregion
 
