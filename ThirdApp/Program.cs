@@ -290,18 +290,30 @@
 
 //----- Unit 5.3 "Passing parameters"
 
-#region Task 5.3 "Create a GetAge() method"
+#region Task 5.3.1 "Create a GetAge() method", Task 5.3.3 "Using ref in the ChangeAge()"
 
-static void GetAge(int userage)
+static void ChangeAge(int userage)
 {
     Console.Write("Enter an age: ");
     userage = Convert.ToInt32(Console.ReadLine());
 }
 
+static void ChangeName(ref string username)
+{
+    Console.Write("Enter a name: ");
+    username = Console.ReadLine();
+}
+
+var name = "Alexey";
+Console.WriteLine(name);
+
 var age = 31;
 Console.WriteLine(age);
 
-GetAge(age);
+ChangeName(ref name);
+Console.WriteLine(name);
+
+ChangeAge(age);
 Console.WriteLine(age);
 
 #endregion
