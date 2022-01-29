@@ -148,130 +148,130 @@
 
 #region Task 5.2.2, Task 5.2.3, Task 5.2.5 "Parameters in the method ShowColor()"
 
-static string ShowColor(string username, int userage)
-{
-    Console.Write($"{username}, {userage} years old,{Environment.NewLine}write your favorite color in English with a small letter: ");
-    var color = Console.ReadLine();
+//static string ShowColor(string username, int userage)
+//{
+//    Console.Write($"{username}, {userage} years old,{Environment.NewLine}write your favorite color in English with a small letter: ");
+//    var color = Console.ReadLine();
 
-    switch (color)
-    {
-        case "red":
+//    switch (color)
+//    {
+//        case "red":
 
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.Black;
+//            Console.BackgroundColor = ConsoleColor.Red;
+//            Console.ForegroundColor = ConsoleColor.Black;
 
-            Console.WriteLine("Your color is red!");
-            break;
+//            Console.WriteLine("Your color is red!");
+//            break;
 
-        case "white":
+//        case "white":
 
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
+//            Console.BackgroundColor = ConsoleColor.White;
+//            Console.ForegroundColor = ConsoleColor.Black;
 
-            Console.WriteLine("Your color is white!");
-            break;
+//            Console.WriteLine("Your color is white!");
+//            break;
 
-        case "blue":
+//        case "blue":
 
-            Console.BackgroundColor = ConsoleColor.Blue;
-            Console.ForegroundColor = ConsoleColor.White;
+//            Console.BackgroundColor = ConsoleColor.Blue;
+//            Console.ForegroundColor = ConsoleColor.White;
 
-            Console.WriteLine("Your color is blue!");
-            break;
+//            Console.WriteLine("Your color is blue!");
+//            break;
 
-        default:
+//        default:
 
-            Console.BackgroundColor = ConsoleColor.Cyan;
-            Console.ForegroundColor = ConsoleColor.Black;
+//            Console.BackgroundColor = ConsoleColor.Cyan;
+//            Console.ForegroundColor = ConsoleColor.Black;
 
-            Console.WriteLine("Your color is cyan!");
-            break;
-    }
+//            Console.WriteLine("Your color is cyan!");
+//            break;
+//    }
 
-    return color;
-}
+//    return color;
+//}
 
-static void ShowColors(string username, params string[] favcolors)
-{
-    Console.WriteLine($"{username}, your favorite colors:");
-    foreach (var color in favcolors)
-    {
-        Console.WriteLine(color);
-    }
-}
+//static void ShowColors(string username, params string[] favcolors)
+//{
+//    Console.WriteLine($"{username}, your favorite colors:");
+//    foreach (var color in favcolors)
+//    {
+//        Console.WriteLine(color);
+//    }
+//}
 
-var (name, age) = ("Cortana", 8);
+//var (name, age) = ("Cortana", 8);
 
-Console.WriteLine(" My name is {0} and i'm {1} years old", name, age);
+//Console.WriteLine(" My name is {0} and i'm {1} years old", name, age);
 
-Console.Write("Enter your name: ");
+//Console.Write("Enter your name: ");
 
-name = Console.ReadLine();
+//name = Console.ReadLine();
 
-Console.Write("Enter your age: ");
+//Console.Write("Enter your age: ");
 
-age = Convert.ToInt32(Console.ReadLine());
+//age = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("So, your name is {0}, and your age is {1}", name, age);
+//Console.WriteLine("So, your name is {0}, and your age is {1}", name, age);
 
-var favcolors = new string[3];
+//var favcolors = new string[3];
 
-for (int i = 0; i < favcolors.Length; i++)
-{
-    favcolors[i] = ShowColor(name, age);
-}
+//for (int i = 0; i < favcolors.Length; i++)
+//{
+//    favcolors[i] = ShowColor(name, age);
+//}
 
-ShowColors(name, favcolors);
+//ShowColors(name, favcolors);
 
 #endregion
 
-#region Task 5.2.8 "Break the method GetArrayFromConsole() apart: GetArrayFromConsole() and SortArray()"
+#region Task 5.2.8 "Break the method GetArrayFromConsole(), Task 5.2.14 - Task 5.2.16 "Optional parameters"
 
-//static int[] GetArrayFromConsole()
-//{
-//    var myarray = new int[5];
+static int[] GetArrayFromConsole(int num = 5)
+{
+    var array = new int[num];
 
-//    for (int i = 0; i < myarray.Length; i++)
-//    {
-//        Console.Write($"Enter array elemnt {i + 1}: ");
-//        myarray[i] = int.Parse(Console.ReadLine());
-//    }
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"Enter array elemnt {i + 1}: ");
+        array[i] = int.Parse(Console.ReadLine());
+    }
 
-//    return myarray;
+    return array;
 
-//}
+}
 
-//static int[] SortArray(int[] sortedarray)
-//{
-//    int temp;
+static int[] SortArray(int[] sortedarray)
+{
+    int temp;
 
-//    for (int i = 0; i < sortedarray.Length; i++)
-//    {
-//        for (int j = i + 1; j < sortedarray.Length; j++)
-//        {
-//            if (sortedarray[i] > sortedarray[j])
-//            {
-//                temp = sortedarray[j];
-//                sortedarray[j] = sortedarray[i];
-//                sortedarray[i] = temp;
-//            }
-//        }
-//    }
+    for (int i = 0; i < sortedarray.Length; i++)
+    {
+        for (int j = i + 1; j < sortedarray.Length; j++)
+        {
+            if (sortedarray[i] > sortedarray[j])
+            {
+                temp = sortedarray[j];
+                sortedarray[j] = sortedarray[i];
+                sortedarray[i] = temp;
+            }
+        }
+    }
 
-//    return sortedarray;
+    return sortedarray;
 
-//}
+}
 
-//Console.WriteLine("Calling method GetArrayFromConsole()");
-//var array = GetArrayFromConsole();
+Console.WriteLine("Calling method GetArrayFromConsole()");
+var array = GetArrayFromConsole(3);
 
-//Console.WriteLine("Calling method SortArray()");
-//SortArray(array);
+Console.WriteLine("Calling method SortArray()");
+var sortedarray = SortArray(array);
 
-//for (int i = 0; i < array.Length; i++)
-//{
-//    Console.Write(array[i] + " ");
-//}
+for (int i = 0; i < sortedarray.Length; i++)
+{
+    Console.Write(sortedarray[i] + " ");
+}
 
 #endregion
 
