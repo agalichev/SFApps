@@ -227,67 +227,83 @@
 
 #region Task 5.2.8 "Break a method GetArrayFromConsole(), Task 5.2.14 - Task 5.2.16 "Optional parameters", Task 5.2.17 - Task 5.2.18 "Create a ShowArray() method and call it"
 
-static int[] GetArrayFromConsole(int num = 5)
-{
-    var array = new int[num];
+//static int[] GetArrayFromConsole(int num = 5)
+//{
+//    var array = new int[num];
 
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write($"Enter array elemnt {i + 1}: ");
-        array[i] = int.Parse(Console.ReadLine());
-    }
+//    for (int i = 0; i < array.Length; i++)
+//    {
+//        Console.Write($"Enter array elemnt {i + 1}: ");
+//        array[i] = int.Parse(Console.ReadLine());
+//    }
 
-    return array;
+//    return array;
 
-}
+//}
 
-static int[] SortArray(int[] sortedarray)
-{
-    int temp;
+//static int[] SortArray(int[] sortedarray)
+//{
+//    int temp;
 
-    for (int i = 0; i < sortedarray.Length; i++)
-    {
-        for (int j = i + 1; j < sortedarray.Length; j++)
-        {
-            if (sortedarray[i] > sortedarray[j])
-            {
-                temp = sortedarray[j];
-                sortedarray[j] = sortedarray[i];
-                sortedarray[i] = temp;
-            }
-        }
-    }
+//    for (int i = 0; i < sortedarray.Length; i++)
+//    {
+//        for (int j = i + 1; j < sortedarray.Length; j++)
+//        {
+//            if (sortedarray[i] > sortedarray[j])
+//            {
+//                temp = sortedarray[j];
+//                sortedarray[j] = sortedarray[i];
+//                sortedarray[i] = temp;
+//            }
+//        }
+//    }
 
-    return sortedarray;
+//    return sortedarray;
 
-}
+//}
 
-static void ShowArray(int[] array, bool IsSort = false)
-{
-    var temp = array;
-    if (IsSort)
-    {
-        Console.WriteLine("Calling method SortArray()");
-        temp = SortArray(array);
-    }
+//static void ShowArray(int[] array, bool IsSort = false)
+//{
+//    var temp = array;
+//    if (IsSort)
+//    {
+//        Console.WriteLine("Calling method SortArray()");
+//        temp = SortArray(array);
+//    }
 
-    foreach (var item in temp)
-    {
-        Console.Write(item + " ");
-    }
+//    foreach (var item in temp)
+//    {
+//        Console.Write(item + " ");
+//    }
 
-}
+//}
 
-Console.WriteLine("Calling method GetArrayFromConsole()");
-var array = GetArrayFromConsole(10);
+//Console.WriteLine("Calling method GetArrayFromConsole()");
+//var array = GetArrayFromConsole(10);
 
-Console.Write("Write, given array needs to sort or no (true / false): ");
-bool IsSort = Convert.ToBoolean(Console.ReadLine());
+//Console.Write("Write, given array needs to sort or no (true / false): ");
+//bool IsSort = Convert.ToBoolean(Console.ReadLine());
 
-ShowArray(array, IsSort);
+//ShowArray(array, IsSort);
 
 #endregion
 
+//----- Unit 5.3 "Passing parameters"
 
+#region Task 5.3 "Create a GetAge() method"
+
+static void GetAge(int userage)
+{
+    Console.Write("Enter an age: ");
+    userage = Convert.ToInt32(Console.ReadLine());
+}
+
+var age = 31;
+Console.WriteLine(age);
+
+GetAge(age);
+Console.WriteLine(age);
+
+#endregion
 
 Console.ReadKey();
