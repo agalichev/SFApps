@@ -292,30 +292,43 @@
 
 #region Task 5.3.1 "Create a GetAge() method", Task 5.3.3 "Using ref in the ChangeAge()"
 
-static void ChangeAge(int userage)
-{
-    Console.Write("Enter an age: ");
-    userage = Convert.ToInt32(Console.ReadLine());
-}
+//static void ChangeAge(int userage)
+//{
+//    Console.Write("Enter an age: ");
+//    userage = Convert.ToInt32(Console.ReadLine());
+//}
 
-static void ChangeName(ref string username)
-{
-    Console.Write("Enter a name: ");
-    username = Console.ReadLine();
-}
+//static void ChangeName(ref string username)
+//{
+//    Console.Write("Enter a name: ");
+//    username = Console.ReadLine();
+//}
 
-var name = "Alexey";
-Console.WriteLine(name);
+//var name = "Alexey";
+//Console.WriteLine(name);
 
-var age = 31;
-Console.WriteLine(age);
+//var age = 31;
+//Console.WriteLine(age);
 
-ChangeName(ref name);
-Console.WriteLine(name);
+//ChangeName(ref name);
+//Console.WriteLine(name);
 
-ChangeAge(age);
-Console.WriteLine(age);
+//ChangeAge(age);
+//Console.WriteLine(age);
 
 #endregion
 
+#region Task 5.3.5 "Without "in" modificator" - Task 5.3.6 "With "in" modificator"
+
+var arr = new int[] { 1, 2, 3 };
+BigDataOperation(arr);
+
+Console.WriteLine(arr[0]);
+
+	static void BigDataOperation(in int[] arr)
+{
+	arr[0] = 4;
+}
+
+#endregion
 Console.ReadKey();
