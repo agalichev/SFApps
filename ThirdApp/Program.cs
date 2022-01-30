@@ -320,15 +320,83 @@
 
 #region Task 5.3.5 "Without "in" modificator" - Task 5.3.6 "With "in" modificator"
 
-var arr = new int[] { 1, 2, 3 };
-BigDataOperation(arr);
+//var arr = new int[] { 1, 2, 3 };
+//BigDataOperation(arr);
 
-Console.WriteLine(arr[0]);
+//Console.WriteLine(arr[0]);
 
-	static void BigDataOperation(in int[] arr)
-{
-	arr[0] = 4;
-}
+//	static void BigDataOperation(in int[] arr)
+//{
+//	arr[0] = 4;
+//}
 
 #endregion
+
+#region Task 5.3.8 "Pass a dimension of array into GetArrayFromConsole() method by ref"
+
+//static int[] GetArrayFromConsole(ref int num)
+//{
+//    num = 6;
+
+//    var array = new int[num];
+
+//    for (int i = 0; i < array.Length; i++)
+//    {
+//        Console.Write($"Enter array elemnt {i + 1}: ");
+//        array[i] = int.Parse(Console.ReadLine());
+//    }
+
+//    return array;
+
+//}
+
+//static int[] SortArray(int[] sortedarray)
+//{
+//    int temp;
+
+//    for (int i = 0; i < sortedarray.Length; i++)
+//    {
+//        for (int j = i + 1; j < sortedarray.Length; j++)
+//        {
+//            if (sortedarray[i] > sortedarray[j])
+//            {
+//                temp = sortedarray[j];
+//                sortedarray[j] = sortedarray[i];
+//                sortedarray[i] = temp;
+//            }
+//        }
+//    }
+
+//    return sortedarray;
+
+//}
+
+//static void ShowArray(int[] array, bool IsSort = false)
+//{
+//    var temp = array;
+//    if (IsSort)
+//    {
+//        Console.WriteLine("Calling method SortArray()");
+//        temp = SortArray(array);
+//    }
+
+//    foreach (var item in temp)
+//    {
+//        Console.Write(item + " ");
+//    }
+
+//}
+
+//int num = 10;
+
+//Console.WriteLine("Calling method GetArrayFromConsole()");
+//var array = GetArrayFromConsole(ref num);
+
+//Console.Write("Write, given array needs to sort or no (true / false): ");
+//bool IsSort = Convert.ToBoolean(Console.ReadLine());
+
+//ShowArray(array, IsSort);
+
+#endregion
+
 Console.ReadKey();
