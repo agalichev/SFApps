@@ -318,7 +318,7 @@
 
 #endregion
 
-#region Task 5.3.5 "Without "in" modificator" - Task 5.3.6 "With "in" modificator"
+#region Task 5.3.5 "Without "in" modifier" - Task 5.3.6 "With "in" modifier"
 
 //var arr = new int[] { 1, 2, 3 };
 //BigDataOperation(arr);
@@ -396,6 +396,21 @@
 //bool IsSort = Convert.ToBoolean(Console.ReadLine());
 
 //ShowArray(array, IsSort);
+
+#endregion
+
+#region An example of the "out" modifier
+
+//static void GetName(out string name, out string oldname){
+
+//    oldname = "Alisa";
+//    Console.Write("Enter your name: ");
+//    name = Console.ReadLine();
+//}
+
+//GetName(out string name, out var oldname);
+//Console.WriteLine(name);
+//Console.WriteLine(oldname);
 
 #endregion
 
