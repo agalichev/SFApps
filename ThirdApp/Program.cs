@@ -414,4 +414,94 @@
 
 #endregion
 
+#region Task 5.3.13 "Modify the SorArray() method"
+
+static int[] GetArrayFromConsole(in int num = 5)
+{
+    var array = new int[num];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"Enter array element {i + 1}: ");
+        array[i] = int.Parse(Console.ReadLine());
+    }
+
+    return array;
+
+}
+
+static void SortArray(in int[] array, out int[] sorteddesc, out int[] sortedasc)
+{
+
+    sorteddesc = SortArrayDesc(array);
+    ShowArray(sorteddesc);
+
+    sortedasc = SortArrayAsc(array);
+    ShowArray(sortedasc);
+
+}
+
+static int[] SortArrayAsc(in int[] array)
+{
+    int temp;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[i] > array[j])
+            {
+                temp = array[j];
+                array[j] = array[i];
+                array[i] = temp;
+            }
+        }
+    }
+
+    return array;
+}
+
+static int[] SortArrayDesc(in int[] array)
+{
+    int temp;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[i] < array[j])
+            {
+                temp = array[j];
+                array[j] = array[i];
+                array[i] = temp;
+            }
+        }
+    }
+
+    return array;
+}
+
+static void ShowArray(int[] array)
+{
+
+    foreach (var item in array)
+    {
+        Console.Write(item + " ");
+    }
+
+    Console.WriteLine();
+
+}
+
+int num = 6;
+
+Console.WriteLine("Calling method GetArrayFromConsole()");
+var array = GetArrayFromConsole(num);
+
+ShowArray(array);
+
+SortArray(array, out var sorteddesc,out var sortedasc);
+
+#endregion
+
 Console.ReadKey();
