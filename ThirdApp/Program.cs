@@ -506,7 +506,7 @@
 
 //----- Unit 5.5 "Recursive functions"
 
-#region "The exercise for recursive function"
+#region Task 5.5.3 "The exercise for recursive function"
 
 static void Echo(string saidworld, int depth)
 {
