@@ -508,36 +508,89 @@
 
 #region Task 5.5.3 "The exercise for recursive function"
 
-static void Echo(string saidworld, int depth)
-{
+//static void Echo(string saidworld, int depth)
+//{
 
-    var modif = saidworld;
+//    var modif = saidworld;
 
-    if (modif.Length > 2)
-    {
-        modif = modif.Remove(0, 2);
-    }
+//    if (modif.Length > 2)
+//    {
+//        modif = modif.Remove(0, 2);
+//    }
 
-    Console.WriteLine("..." + modif);
+//    Console.BackgroundColor = (ConsoleColor)depth;
+//    Console.WriteLine("..." + modif);
 
-    if (depth > 1)
-    {
-        Echo(modif, depth - 1);
-    }
+//    if (depth > 1)
+//    {
+//        Echo(modif, depth - 1);
+//    }
 
+//}
+
+//Console.WriteLine("Write something");
+
+//var str = Console.ReadLine();
+
+//Console.Write("Specify the echos depth: ");
+
+//var depth = int.Parse(Console.ReadLine());
+
+//Echo(str, depth);
+
+#endregion
+
+#region An example of the recursive method Factorial()
+
+//static decimal Factorial(decimal x)
+//{
+//    if (x == 0)
+//    {
+//        return 1;
+//    }
+//    else
+//    {
+//        return x * Factorial(x - 1);
+//    }
+//}
+
+//Console.WriteLine("Enter a number for factorial calculating:");
+//var x = decimal.Parse(Console.ReadLine());
+
+//Console.WriteLine(Factorial(x));
+
+#endregion
+
+#region Task 5.5.8 "Recursive method PowerUp()"
+
+static int PowerUp(int N, byte pow)
+{ 
     
+    if (pow == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        if (pow == 1)
+        {
+            return N;
+        }
+        else
+        {
+            return N * PowerUp(N, --pow);
+        }
+    }
 
 }
 
-Console.WriteLine("Write something");
+Console.Write("Enter a number: ");
+int num = int.Parse(Console.ReadLine());
 
-var str = Console.ReadLine();
+Console.Write("Enter a power: ");
+byte pow = byte.Parse(Console.ReadLine());
 
-Console.Write("Specify the echos depth: ");
-
-var depth = int.Parse(Console.ReadLine());
-
-Echo(str, depth);
+Console.WriteLine($"A number {num} to the power {pow} is " + (PowerUp(num, pow)));
 
 #endregion
 
