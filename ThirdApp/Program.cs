@@ -563,34 +563,34 @@
 
 #region Task 5.5.8 "Recursive method PowerUp()"
 
-static int PowerUp(int N, byte pow)
-{ 
-    
-    if (pow == 0)
-    {
-        return 1;
-    }
-    else
-    {
-        if (pow == 1)
-        {
-            return N;
-        }
-        else
-        {
-            return N * PowerUp(N, --pow);
-        }
-    }
+//static int PowerUp(int N, byte pow)
+//{ 
 
-}
+//    if (pow == 0)
+//    {
+//        return 1;
+//    }
+//    else
+//    {
+//        if (pow == 1)
+//        {
+//            return N;
+//        }
+//        else
+//        {
+//            return N * PowerUp(N, --pow);
+//        }
+//    }
 
-Console.Write("Enter a number: ");
-int num = int.Parse(Console.ReadLine());
+//}
 
-Console.Write("Enter a power: ");
-byte pow = byte.Parse(Console.ReadLine());
+//Console.Write("Enter a number: ");
+//int num = int.Parse(Console.ReadLine());
 
-Console.WriteLine($"A number {num} to the power {pow} is " + (PowerUp(num, pow)));
+//Console.Write("Enter a power: ");
+//byte pow = byte.Parse(Console.ReadLine());
+
+//Console.WriteLine($"A number {num} to the power {pow} is " + (PowerUp(num, pow)));
 
 #endregion
 
