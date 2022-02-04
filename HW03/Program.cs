@@ -3,13 +3,13 @@
 static (string, string, int, string[], string[]) GetUser()
 {
 
-   // (string Name, string LastName, int Age, string[] Pets, string[] FavColors) User;
-    
+    (string Name, string LastName, int Age, string[] Pets, string[] FavColors) User;
+
     Console.Write("Enter a name: ");
-    var Name = Console.ReadLine();
+    User.Name = Console.ReadLine();
 
     Console.Write("Enter a lastname: ");
-    var LastName = Console.ReadLine();
+    User.LastName = Console.ReadLine();
 
     string checknum;
     int correctnum;
@@ -21,7 +21,7 @@ static (string, string, int, string[], string[]) GetUser()
     }
     while (!CheckNumber(checknum, out correctnum));
 
-    var Age = correctnum;
+    User.Age = correctnum;
 
     bool HaveAPet, checkanswer;
 
@@ -54,7 +54,6 @@ static (string, string, int, string[], string[]) GetUser()
     }
     while(!checkanswer);
 
-    var Pets = new string[3];
     if (HaveAPet)
     {
 
@@ -67,22 +66,33 @@ static (string, string, int, string[], string[]) GetUser()
         }
         while(!CheckNumber(checknum,out correctnum));
 
-        Pets = GetUserPets(correctnum);
+        User.Pets = GetUserPets(correctnum);
 
     }
-    var FavColors = new string[3];
+    else
+    {
+
+        User.Pets = new string[1];
+
+        for (int i = 0; i < User.Pets.Length; i++)
+        {
+
+            User.Pets[i] = "-";
+
+        }
+
+    }
+
     do
     {
-        Console.Write($"Enter a {Name} {LastName} favorite colors number: ");
+        Console.Write($"Enter a {User.Name} {User.LastName} favorite colors number: ");
         checknum = Console.ReadLine();
     }
     while (!CheckNumber(checknum, out correctnum));
 
-    FavColors = GetUserFavoriteColors(correctnum);
+    User.FavColors = GetUserFavoriteColors(correctnum);
 
-    var result = (Name, LastName, Age, Pets, FavColors);
-
-    return result;
+    return User;
 
 }
 
@@ -139,7 +149,7 @@ static string[] GetUserFavoriteColors(int num)
 static void ShowUser((string, string, int, string[], string[]) anyuser)
 {
 
-    Console.WriteLine($"Added user characteristics:{Environment.NewLine}Name: {anyuser.Item1},{Environment.NewLine}LastName: {anyuser.Item2},{Environment.NewLine}Age: {anyuser.Item3}");
+    Console.WriteLine($"Characteristics of added user:{Environment.NewLine}Name: {anyuser.Item1},{Environment.NewLine}LastName: {anyuser.Item2},{Environment.NewLine}Age: {anyuser.Item3}");
 
     Console.Write("Pets: ");
     for (int i = 0; i < anyuser.Item4.Length; i++)
@@ -149,6 +159,8 @@ static void ShowUser((string, string, int, string[], string[]) anyuser)
 
     }
 
+    Console.WriteLine();
+    
     Console.Write("favorite colors: ");
     for (int i = 0; i < anyuser.Item5.Length; i++)
     {
@@ -160,4 +172,7 @@ static void ShowUser((string, string, int, string[], string[]) anyuser)
 }
 
 var User = GetUser();
+
+Console.WriteLine();
+
 ShowUser(User);
