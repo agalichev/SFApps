@@ -18,7 +18,7 @@ namespace ModuleSixApp // Note: actual namespace depends on the project name.
         }
     }
 
-//----- Unit 6.2 "Classes and structs".
+//----- Unit 6.2 "Classes and structs" -----
 
 	class Human
     {
@@ -68,7 +68,40 @@ namespace ModuleSixApp // Note: actual namespace depends on the project name.
         }
 	}
 
-    #endregion
+	#endregion
 
+	#region Task 6.2.8 "Create a Rectangle class".
+
+	public class Rectangle
+	{
+		public int a;
+		public int b;
+
+		public int Square()
+		{
+			return a * b;
+		}
+		
+		public Rectangle()
+        {
+			a = 6;
+			b = 4;
+        }
+
+		public Rectangle(int equal)
+        {
+			a = equal;
+			b = equal;
+        }
+
+		public Rectangle(int firstside, int secondside)
+        {
+			a = firstside;
+			b = secondside;
+        }
+
+	}
+
+    #endregion
 }
 
