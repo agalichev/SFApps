@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Questionnaire", "Questionna
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThirdApp", "ThirdApp\ThirdApp.csproj", "{CADC32C9-F5AF-42B5-975C-AD300F8DF764}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW03", "HW03\HW03.csproj", "{AB95EF54-F98E-4610-9049-829949E8FA74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW03", "HW03\HW03.csproj", "{AB95EF54-F98E-4610-9049-829949E8FA74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleSixApp", "ModuleSixApp\ModuleSixApp.csproj", "{D14EFD37-EFBD-4E42-AC84-A7FD20F6EBEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{AB95EF54-F98E-4610-9049-829949E8FA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB95EF54-F98E-4610-9049-829949E8FA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB95EF54-F98E-4610-9049-829949E8FA74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D14EFD37-EFBD-4E42-AC84-A7FD20F6EBEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D14EFD37-EFBD-4E42-AC84-A7FD20F6EBEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D14EFD37-EFBD-4E42-AC84-A7FD20F6EBEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D14EFD37-EFBD-4E42-AC84-A7FD20F6EBEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
