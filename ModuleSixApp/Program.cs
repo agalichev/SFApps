@@ -13,10 +13,41 @@ namespace ModuleSixApp // Note: actual namespace depends on the project name.
 			human.age = 30;
 			human.Greetings();
 
+			Console.WriteLine("----------------");
+
+			var department = GetCurrentDepartment();
+
+			if (department?.Company?.Type == "Bank" && department?.City?.Name == "St. Petersburg")
+            {
+				Console.WriteLine($"The {department?.Company?.Name ?? "Unknown"} bank has a branch in St. Petersburg.");
+            }
+			Console.WriteLine();
+
 			Console.ReadKey();
 
+
+
         }
-    }
+
+		static Department GetCurrentDepartment()
+		{
+			Department Department = new Department();
+			Department.Company = new Company();
+			Department.City = new City();
+
+			Console.Write("Enter a type of company: ");
+			Department.Company.Type = Console.ReadLine();
+
+			Console.Write("Enter a city of company: ");
+			Department.City.Name = Console.ReadLine();
+
+			Console.Write("Enter a name of company: ");
+			Department.Company.Name = Console.ReadLine();
+
+			return Department;
+		}
+
+	}
 
 //----- Unit 6.2 "Classes and structs" -----
 
@@ -70,7 +101,7 @@ namespace ModuleSixApp // Note: actual namespace depends on the project name.
 
 	#endregion
 
-	#region Task 6.2.8 "Create a Rectangle class".
+	#region Task 6.2.8 "Create a Rectangle class"
 
 	public class Rectangle
 	{
@@ -102,6 +133,30 @@ namespace ModuleSixApp // Note: actual namespace depends on the project name.
 
 	}
 
-    #endregion
+	#endregion
+
+	//----- Unit 6.3 "Features of working with reference and value data types" -----
+
+	#region Task 6.3.1
+
+	class Company
+    {
+		public string Name;
+		public string Type;
+    }
+
+	class Department
+    {
+		public Company Company;
+		public City City;
+    }
+
+	class City
+    {
+		public string Name;
+    }
+
+
+    #endregion 
 }
 
