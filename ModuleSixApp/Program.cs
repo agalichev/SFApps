@@ -21,7 +21,12 @@ namespace ModuleSixApp // Note: actual namespace depends on the project name.
             {
 				Console.WriteLine($"The {department?.Company?.Name ?? "Unknown"} bank has a branch in St. Petersburg.");
             }
-			Console.WriteLine();
+
+			Console.WriteLine("-----------------");
+
+			var bus = new Bus();
+
+			bus.PrintStatus();
 
 			Console.ReadKey();
 
@@ -157,6 +162,30 @@ namespace ModuleSixApp // Note: actual namespace depends on the project name.
     }
 
 
-    #endregion 
+	#endregion
+
+	#region Task 6.3.2 "Bus class and PrintStatus() method"
+
+	class Bus
+    {
+		public int? Load;
+
+		public void PrintStatus()
+        {
+			Console.Write("Enter a number of passengers: ");
+			Load = Convert.ToInt32(Console.ReadLine());
+
+			if (Load.HasValue)
+			{
+				Console.WriteLine($"The number of passengers on the bus is {Load.Value}");
+			}
+            else
+            {
+				Console.WriteLine("The bus is epmty!");
+            }
+        }
+    }
+
+	#endregion
 }
 
