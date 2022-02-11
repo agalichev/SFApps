@@ -187,5 +187,61 @@ namespace ModuleSixApp // Note: actual namespace depends on the project name.
     }
 
 	#endregion
+
+	#region Task 6.5.2 "Describe object classes: triangle, circle and square"
+
+	class Triangle
+	{
+		public int FirstSide;
+		public int SecondSide;
+		public int ThirdSide;
+
+		public double CalcTriangleSquare()
+		{
+			return 0.0;
+		}
+
+		public double CalcTrianglePerimeter()
+        {
+			return 0.0;
+        }
+
+	}
+
+	class Circle
+    {
+		public double Radius;
+
+		public double CalcCircleSquare()
+        {
+			return 0.0;
+        }
+
+		public double CalcCirclePerimeter()
+        {
+			return 0.0;
+        }
+
+    }
+
+	class Square
+    {
+		public int Side;
+
+		public double CalcSquareSquare()
+        {
+			return 0.0;
+        }
+
+		public double CalcSquarePerimeter()
+        {
+			return 0.0;
+        }
+    }
+
+    #endregion
+
+
+
 }
 
