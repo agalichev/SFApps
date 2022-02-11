@@ -188,6 +188,8 @@ namespace ModuleSixApp // Note: actual namespace depends on the project name.
 
 	#endregion
 
+	//----- Unit 6.5 "Introduction into OOP" -----
+
 	#region Task 6.5.2 "Describe object classes: triangle, circle and square"
 
 	class Triangle
@@ -241,7 +243,32 @@ namespace ModuleSixApp // Note: actual namespace depends on the project name.
 
     #endregion
 
+    //----- Unit 6.6 "Encapsulation" -----
 
+    #region Task 6.6.1 "Write a TrafficLight class"
+    
+	class TrafficLight
+    {
+		enum TrafficLightColor
+        {
+			Green = 0,
+			Yellow,
+			Red
+		}
 
+		private string Color;
+
+		private void ChangeColor(string newColor)
+        {
+        }
+
+		public string GetColor()
+        {
+			return Color;
+        }
+
+    }
+	
+	#endregion
 }
 
