@@ -268,7 +268,78 @@ namespace ModuleSixApp // Note: actual namespace depends on the project name.
         }
 
     }
-	
+
 	#endregion
+
+	#region Task 6.6.2 "Modify the User class: add a Login and Email properties"
+
+	class User
+    {
+		private int age;
+		public int Age
+        {
+			get 
+			{ 
+				return age; 
+			}
+
+            set
+            {
+				if (value < 18)
+                {
+					Console.WriteLine("Age must be at least 18");
+                }
+                else
+                {
+					age = value;
+                }
+            }
+        }
+
+		private string login;
+		public string Login
+        {
+            get
+            {
+				return login;
+            }
+
+            set
+            {
+				if (value.Length < 3)
+                {
+					Console.WriteLine("Login length must be at least 3");
+                }
+                else
+                {
+					login = value;
+                }
+            }
+        }
+
+		private string email;
+		public string Email
+        {
+            get
+            {
+				return email;
+            }
+
+            set
+            {
+				if (!value.Contains('@'))
+                {
+					Console.WriteLine("The email must contain '@'");
+                }
+                else
+                {
+					email = value;
+                }
+            }
+        }
+    }
+
+    #endregion
+
 }
 
