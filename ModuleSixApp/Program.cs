@@ -339,6 +339,99 @@ namespace ModuleSixApp // Note: actual namespace depends on the project name.
         }
     }
 
+	#endregion
+
+	#region Task 6.6.5 "Modify the Triangle class: change variables to properties"
+
+	class TriangleTwo
+    {
+		private int a;
+		public int A
+        {
+            get
+            {
+				return a;
+            }
+
+            set
+            {
+				if (value <= 0)
+				{
+					Console.WriteLine("The value must be greater than zero");
+				}
+				else if ((b + c) < value)
+                {
+					Console.WriteLine("The sum of the other two sides must be greater than the value you enter");
+                }
+                else
+                {
+					a = value;
+                }
+            }
+        }
+
+		private int b;
+		public int B
+        {
+			get
+			{
+				return b;
+			}
+
+			set
+			{
+				if (value <= 0)
+				{
+					Console.WriteLine("The value must be greater than zero");
+				}
+				else if ((a + c) < value)
+				{
+					Console.WriteLine("The sum of the other two sides must be greater than the value you enter");
+				}
+				else
+				{
+					b = value;
+				}
+			}
+		}
+
+		private int c;
+		public int C
+		{
+			get
+			{
+				return c;
+			}
+
+			set
+			{
+				if (value <= 0)
+				{
+					Console.WriteLine("The value must be greater than zero");
+				}
+				else if ((a + b) < value)
+				{
+					Console.WriteLine("The sum of the other two sides must be greater than the value you enter");
+				}
+				else
+				{
+					c = value;
+				}
+			}
+		}
+
+		public double CalcTriangleSquare()
+		{
+			return 0.0;
+		}
+
+		public double CalcTrianglePerimeter()
+		{
+			return 0.0;
+		}
+
+	}
+
     #endregion
 
 }
