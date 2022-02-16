@@ -71,4 +71,24 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
     }
 
     #endregion
+
+    #region Task 7.1.6 "Implement a constructor that populates the fields of this class"
+
+    class Obj
+    {
+        private string Name;
+        private string owner;
+        private int length;
+        private int count;
+
+        public Obj(string name, string ownerName, int objLength, int count)
+        {
+            this.Name = name;
+            owner = ownerName;
+            length = objLength;
+            this.count = count;
+        }
+    }
+
+    #endregion
 }
