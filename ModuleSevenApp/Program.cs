@@ -28,4 +28,47 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
     }
 
     #endregion
+
+    #region Task 7.1.5 "Create a classes scheme"
+	class Food
+    {
+
+    }
+
+	class Vegetables: Food
+    {
+		
+    }
+
+	class Fruits: Food
+    {
+
+    }
+
+	class Potato: Vegetables
+    {
+
+    }
+
+	class Carrot: Vegetables
+    {
+
+    }
+
+	class Apple: Fruits
+    {
+
+    }
+
+	class Pear: Fruits
+    {
+
+    }
+
+    class Banana: Fruits
+    {
+
+    }
+
+    #endregion
 }
