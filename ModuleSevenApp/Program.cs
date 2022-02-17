@@ -6,7 +6,10 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 	{
 		public static void Main(string[] args)
 		{
-
+            HomoSapiens hs = new HomoSapiens();
+            Human human = hs;
+            Creature creature = human;
+            Creature secondCreature = new Animal();
 		}
 	}
 	#region Task 7.1.4 "Create Employee class inheritors: ProjectManager and Developer"
@@ -123,4 +126,13 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
     }
 
     #endregion
+
+    class Creature { }
+
+    class Animal : Creature { }
+
+    class Human : Creature { }
+
+    class HomoSapiens : Human { }
+
 }
