@@ -91,4 +91,36 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
     }
 
     #endregion
+
+    #region Task 7.1.10 "Create 2 cotstructors for DerivedClass"
+
+    class BaseClass
+    {
+        protected string Name;
+
+        public BaseClass(string name)
+        {
+            Name = name;
+        }
+    }
+
+    class DerivedClass: BaseClass
+    {
+        public string Description;
+
+        public int Counter;
+
+        public DerivedClass(string name, string description): base(name)
+        {
+            Description = description;
+        }
+
+        public DerivedClass(string name, string description, int counter): base(name)
+        {
+            Description = description;
+            Counter = counter;
+        }
+    }
+
+    #endregion
 }
