@@ -75,7 +75,7 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     #endregion
 
-    #region Task 7.1.6 "Implement a constructor that populates the fields of this class"
+    #region Task 7.1.6 "Implement a constructor that populates the fields of this class", Task 7.2.3 "Virtual and override Display method"
 
     class Obj
     {
@@ -105,6 +105,12 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
         {
             Name = name;
         }
+
+        public virtual void Display()
+        {
+            Console.WriteLine("BaseClass class method");
+        }
+
     }
 
     class DerivedClass: BaseClass
@@ -123,6 +129,12 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
             Description = description;
             Counter = counter;
         }
+
+        public override void Display()
+        {
+            Console.WriteLine("DerivedClass class method");
+        }
+
     }
 
     #endregion
@@ -134,5 +146,6 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
     class Human : Creature { }
 
     class HomoSapiens : Human { }
+
 
 }
