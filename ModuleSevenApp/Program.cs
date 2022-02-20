@@ -75,7 +75,7 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     #endregion
 
-    #region Task 7.1.6 "Implement a constructor that populates the fields of this class", Task 7.2.3 "Virtual and override Display method"
+    #region Task 7.1.6 "Implement a constructor that populates the fields of this class"
 
     class Obj
     {
@@ -95,11 +95,12 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     #endregion
 
-    #region Task 7.1.10 "Create 2 cotstructors for DerivedClass"
+    #region Task 7.1.10 "Create 2 cotstructors for DerivedClass", Task 7.2.3 "Virtual and override Display method", Task 7.2.4 "Override property "Counter"", Task 7.2.5 "Using "base" in overrided method"
 
     class BaseClass
     {
         protected string Name;
+        public virtual int Counter { get; set; }
 
         public BaseClass(string name)
         {
@@ -117,7 +118,21 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
     {
         public string Description;
 
-        public int Counter;
+        private int counter;
+        public override int Counter 
+        { 
+            get 
+            { 
+                return counter;
+            } 
+            set 
+            {
+                if (value >= 0)
+                {
+                    counter = value;
+                }
+            } 
+        }
 
         public DerivedClass(string name, string description): base(name)
         {
@@ -132,6 +147,7 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
         public override void Display()
         {
+            base.Display();
             Console.WriteLine("DerivedClass class method");
         }
 
