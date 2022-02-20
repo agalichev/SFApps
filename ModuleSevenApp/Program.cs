@@ -6,10 +6,18 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 	{
 		public static void Main(string[] args)
 		{
-            HomoSapiens hs = new HomoSapiens();
-            Human human = hs;
-            Creature creature = human;
-            Creature secondCreature = new Animal();
+            //HomoSapiens hs = new HomoSapiens();
+            //Human human = hs;
+            //Creature creature = human;
+            //Creature secondCreature = new Animal();
+
+            D d = new D();
+            E e = new E();
+
+            d.Display();
+            ((A)e).Display();
+            ((B)d).Display();
+            ((A)d).Display();  
 		}
 	}
 	#region Task 7.1.4 "Create Employee class inheritors: ProjectManager and Developer"
@@ -155,6 +163,9 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     #endregion
 
+    #region Example
+
+    
     class Creature { }
 
     class Animal : Creature { }
@@ -163,5 +174,46 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     class HomoSapiens : Human { }
 
+    #endregion
 
+    #region Task 7.2.7 "Create a classes scheme (using hinding)"
+    class A 
+    {
+        public virtual void Display()
+        {
+            Console.WriteLine("A");
+        }
+    }
+    class B : A
+    {
+        public void Display()
+        {
+            Console.WriteLine("B");
+        }
+    }
+    class C : A 
+    {
+        public override void Display()
+        {
+            Console.WriteLine("C");
+        }
+    }
+
+    class D : B
+    {
+        public void Display()
+        {
+            Console.WriteLine("D");
+        }
+    }
+
+    class E : C
+    {
+        public void Display()
+        {
+            Console.WriteLine("E");
+        }
+    }
+
+    #endregion
 }
