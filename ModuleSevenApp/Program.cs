@@ -90,7 +90,7 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     #endregion
 
-    #region Task 7.1.6 "Implement a constructor that populates the fields of this class"
+    #region Task 7.1.6 "Implement a constructor that populates the fields of this class", Task 7.2.12 "Operators + and - overloading"
 
     class Obj
     {
@@ -98,6 +98,12 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
         private string owner;
         private int length;
         private int count;
+        public int Value;
+
+        public Obj()
+        {
+
+        }
 
         public Obj(string name, string ownerName, int objLength, int count)
         {
@@ -106,6 +112,23 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
             length = objLength;
             this.count = count;
         }
+
+        public static Obj operator + (Obj a, Obj b)
+        {
+            return new Obj
+            {
+                Value = a.Value + b.Value
+            };
+        }
+
+        public static Obj operator - (Obj a, Obj b)
+        {
+            return new Obj
+            {
+                Value = a.Value - b.Value
+            };
+        }
+
     }
 
     #endregion
