@@ -17,7 +17,14 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
             d.Display();
             ((A)e).Display();
             ((B)d).Display();
-            ((A)d).Display();  
+            ((A)d).Display();
+
+            Vector a = new Vector { X = 3, Y = 5 };
+
+            Vector D = +a;
+            Vector E = a + (10,-5);
+
+            Console.ReadKey();
 		}
 	}
 	#region Task 7.1.4 "Create Employee class inheritors: ProjectManager and Developer"
@@ -213,6 +220,35 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
         {
             Console.WriteLine("E");
         }
+    }
+
+    #endregion
+
+    #region Example
+
+    class Vector
+    {
+        public int X;
+        public int Y;
+
+        public static Vector operator + (Vector a)
+        {
+            return new Vector
+            {
+                X = a.X,
+                Y = a.Y,
+            };
+        }
+        
+        public static Vector operator + (Vector a, (int X, int Y) b)
+        {
+            return new Vector
+            {
+                X = a.X + b.X,
+                Y = a.Y + b.Y
+            };
+        }
+
     }
 
     #endregion
