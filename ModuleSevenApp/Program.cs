@@ -275,4 +275,42 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
     }
 
     #endregion
+
+    #region Task 7.2.14 "Indexer for IndexingClass class"
+
+    class IndexingClass
+    {
+        private int[] array;
+
+        public IndexingClass(int[] array)
+        {
+            this.array = array;
+        }
+
+        public int this[int index]
+        {
+            get
+            {
+                if (index < array.Length)
+                {
+                    return array[index];
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set
+            {
+                if(index < array.Length)
+                {
+                    array[index] = value;
+                }
+            }
+        }
+
+    }
+
+    #endregion
+
 }
