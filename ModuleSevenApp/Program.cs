@@ -348,4 +348,18 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     #endregion
 
+    #region Task 7.5.3 "Create a Helper class and Swap method"
+
+    class Helper
+    {
+        public static void Swap(ref int number1,ref int number2)
+        {
+            int temp = number1;
+            number1 = number2;
+            number2 = temp;
+        }
+    }
+
+    #endregion
+
 }
