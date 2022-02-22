@@ -90,11 +90,13 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     #endregion
 
-    #region Task 7.1.6 "Implement a constructor that populates the fields of this class", Task 7.2.12 "Operators + and - overloading"
+    #region Task 7.1.6 "Implement a constructor that populates the fields of this class", Task 7.2.12 "Operators + and - overloading", Task 7.5.2 "Create static field MaxValue in Obj class"
 
     class Obj
     {
-        private string Name;
+        public string Name;
+        public string Description;
+        public static int MaxValue = 2000;
         private string owner;
         private int length;
         private int count;
