@@ -313,4 +313,37 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     #endregion
 
+    #region Task 7.3.3 "Abstract class ComputerPart"
+
+    abstract class ComputerPart
+    {
+        public abstract void Work();
+    }
+
+    class MotherBoard : ComputerPart
+    {
+        public override void Work()
+        {
+              
+        }
+    }
+
+    class Processor : ComputerPart
+    {
+        public override void Work()
+        {
+
+        }
+    }
+
+    class GraphicCard : ComputerPart
+    {
+        public override void Work()
+        {
+
+        }
+    }
+
+    #endregion
+
 }
