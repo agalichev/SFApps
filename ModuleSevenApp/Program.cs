@@ -24,6 +24,18 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
             Vector D = +a;
             Vector E = a + (10,-5);
 
+            int num1 = 7;
+            int num2 = -13;
+            int num3 = 0;
+
+            Console.WriteLine(num1.GetNegative());
+            Console.WriteLine(num1.GetPositive());
+            Console.WriteLine(num2.GetNegative());
+            Console.WriteLine(num2.GetPositive());
+            Console.WriteLine(num3.GetNegative());
+            Console.WriteLine(num3.GetPositive());
+
+
             Console.ReadKey();
 		}
 	}
@@ -103,7 +115,7 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
         public int Value;
         public static string Parent;
         public static int DaysInWeek;
-
+        
         public Obj()
         {
 
@@ -370,6 +382,37 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
             int temp = number1;
             number1 = number2;
             number2 = temp;
+        }
+    }
+
+    #endregion
+
+    #region Task 7.5.9 "Extension methods for int"
+
+    static class IntExtensions
+    {
+        public static int GetNegative(this int value)
+        {
+            if (value > 0)
+            {
+                return -value;
+            }
+            else
+            {
+                return value;
+            }
+        }
+
+        public static int GetPositive(this int value)
+        {
+            if (value < 0)
+            {
+                return -value;
+            }
+            else
+            {
+                return value;
+            }
         }
     }
 
