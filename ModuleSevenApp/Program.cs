@@ -90,21 +90,29 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     #endregion
 
-    #region Task 7.1.6 "Implement a constructor that populates the fields of this class", Task 7.2.12 "Operators + and - overloading", Task 7.5.2 "Create static field MaxValue in Obj class"
+    #region Task 7.1.6 "Implement a constructor that populates the fields of this class", Task 7.2.12 "Operators + and - overloading", Task 7.5.2 "Create static field MaxValue in Obj class", Task 7.5.5 "Initialize static fields in Obj class"
 
     class Obj
     {
         public string Name;
         public string Description;
-        public static int MaxValue = 2000;
+        public static int MaxValue;
         private string owner;
         private int length;
         private int count;
         public int Value;
+        public static string Parent;
+        public static int DaysInWeek;
 
         public Obj()
         {
 
+        }
+        static Obj()
+        {
+            MaxValue = 2000;
+            Parent = "System.Object";
+            DaysInWeek = 7;
         }
 
         public Obj(string name, string ownerName, int objLength, int count)
@@ -113,6 +121,11 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
             owner = ownerName;
             length = objLength;
             this.count = count;
+        }
+
+        public Obj(int number)
+        {
+            Value = number;
         }
 
         public static Obj operator + (Obj a, Obj b)
