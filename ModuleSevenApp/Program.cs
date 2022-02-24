@@ -418,4 +418,24 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     #endregion
 
+    #region Task 7.6.2 "Create a generic class Car and ElectricEngine and GasEngine classes"
+
+    class Car<T>
+    {
+        public T Engine;
+    }
+
+    class ElectricEngine
+    {
+
+    }
+
+    class GasEngine
+    {
+
+    }
+
+    #endregion
+
+
 }
