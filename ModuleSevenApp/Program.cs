@@ -418,44 +418,49 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     #endregion
 
-    #region Task 7.6.2 "Create a generic class Car and ElectricEngine and GasEngine classes", Task 7.6.7 "Add Battery, Differential and Wheel classes, and ChangePart method into Car class"
+    #region Task 7.6.2 "Create a generic class Car and ElectricEngine and GasEngine classes", Task 7.6.7 "Add Battery, Differential and Wheel classes, and ChangePart method into Car class", Task 7.6.9 "Set restrictions on the generic types of the Car class", Task 7.6.10 "Rename the generic parameters"
 
-    class Car<T1>
+    class Car<TEngine> where TEngine : Engine
     {
-        public T1 Engine;
+        public TEngine Engine;
 
-        public virtual void ChangePart<T2>(T2 newPart)
+        public virtual void ChangePart<TCarPart>(TCarPart newPart) where TCarPart : CarPart
         {
-
+                
         }
     }
 
-    class ElectricEngine
+    abstract class Engine
     {
 
     }
 
-    class GasEngine
+    class ElectricEngine : Engine
     {
 
     }
 
-    class CarParts
+    class GasEngine : Engine
     {
 
     }
 
-    class Battery : CarParts
+    abstract class CarPart
     {
 
     }
 
-    class Differential : CarParts
+    class Battery : CarPart
     {
 
     }
 
-    class Wheel : CarParts
+    class Differential : CarPart
+    {
+
+    }
+
+    class Wheel : CarPart
     {
 
     }
@@ -473,5 +478,7 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
     }
 
     #endregion
+
+    #region Task 7.6.9 ""
 
 }
