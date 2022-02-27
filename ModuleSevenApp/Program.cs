@@ -418,16 +418,13 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     #endregion
 
-    #region Task 7.6.2 "Create a generic class Car and ElectricEngine and GasEngine classes", Task 7.6.7 "Add Battery, Differential and Wheel classes, and ChangePart method into Car class", Task 7.6.9 "Set restrictions on the generic types of the Car class", Task 7.6.10 "Rename the generic parameters"
+    #region Task 7.6.2 "Create a generic class Car and ElectricEngine and GasEngine classes", Task 7.6.7 "Add Battery, Differential and Wheel classes, and ChangePart method into Car class", Task 7.6.9 "Set restrictions on the generic types of the Car class", Task 7.6.10 "Rename the generic parameters", Task 7.6.12 "Inheritance from the generalized Car class"
 
-    class Car<TEngine> where TEngine : Engine
+    abstract class Car<TEngine> where TEngine : Engine
     {
         public TEngine Engine;
 
-        public virtual void ChangePart<TCarPart>(TCarPart newPart) where TCarPart : CarPart
-        {
-                
-        }
+        public abstract void ChangePart<TCarPart>(TCarPart newPart) where TCarPart : CarPart;
     }
 
     abstract class Engine
@@ -465,20 +462,24 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
     }
 
-    #endregion
-
-    #region Task 7.6.6 "Realize a Record generic class"
-
-    class Record<T1, T2>
+    class ElectricCar : Car <ElectricEngine>
     {
-        public T1 Id;
-        public T2 Value;
+        public override void ChangePart<TCarPart>(TCarPart newPart)
+        {
 
-        DateTime Date;
+        }
     }
 
-    #endregion
+    class GasCar : Car<GasEngine>
+    {
+        public override void ChangePart<TCarPart>(TCarPart newPart)
+        {
 
-    #region Task 7.6.9 ""
+        }
+    }
+
+
+
+    #endregion
 
 }
