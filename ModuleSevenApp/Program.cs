@@ -35,7 +35,20 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
             Console.WriteLine(num3.GetNegative());
             Console.WriteLine(num3.GetPositive());
 
+            int count = 0;
+            int number = 680000;
 
+            
+            string format = "{0:AX ######}";
+            
+            foreach (char c in format)
+            {
+                if (c == '#')
+                    count++;
+            }
+            count = (int)(Math.Pow(10, count) - 1);
+            Console.WriteLine(String.Format(format, number));
+            Console.WriteLine(count);
             Console.ReadKey();
 		}
 	}
