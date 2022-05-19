@@ -817,10 +817,7 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 				if (Shops != null)
 				{
 					Console.WriteLine(" Магазины:");
-					//foreach (Shop shop in Shops)
-					//{
-					//	Console.WriteLine($"\t> {shop.DisplayAddress()}");
-					//}
+					
 					for (int i = 0; i < Shops.Count; i++)
 					{
 						AppActions.SetTextColor($"\t{i + 1} --\t{Shops[i].DisplayAddress()}", ConsoleColor.Cyan);
@@ -878,8 +875,7 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 			Street = street;
 			Building = building;
 			Appartment = appartment;
-			Postcode = postcode/*.FormatPostcode(format)*/;
-			//Description = String.Format("{0}: ", description);
+			Postcode = postcode;
 		}
 
 		//----------- тестовый вариант
@@ -1095,7 +1091,7 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 		private double _productMargin;
 		private City _city;
 
-		public double DeliveryMargin { get { return _deliveryMargin; } set { _deliveryMargin = value; } } // Наценка на доставку в определенный город (до точки выдачи)
+		public double DeliveryMargin { get { return _deliveryMargin; } set { _deliveryMargin = value; } } // Наценка на доставку в определенный город
 		public double ProductMargin { get { return _productMargin; } set { _productMargin = value; } } // Наценка на товар
 		public City City { get { return _city; } set { _city = value; } }
 
@@ -1131,11 +1127,6 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 			return number;
 
 		}
-
-		//      public static string FormatPostcode(this int inputstr, string format)
-		//{
-		//	return String.Format(format, inputstr);
-		//}
 	}
 
 	public static class LongExtansions
@@ -1346,19 +1337,6 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 			string _errorDescription = $"Недопустимый ввод {inputstr}";
 			//bool check; 
 			int number;
-
-			//do
-			//{
-			//	inputstr = Console.ReadLine();
-			//	check = !int.TryParse(inputstr, out number) || (inputstr == "");
-
-			//	if (check)
-			//	{
-			//		Console.Write(_errorDescription);
-			//	}
-
-			//}
-			//while (check);
 
 			while (true)
 			{
@@ -1763,9 +1741,6 @@ namespace ModuleSevenApp // Note: actual namespace depends on the project name.
 
 		public Product this[int index]
 		{
-			//get => stok[index];
-			//set => stok[index] = value;
-
 			get
 			{
 				if (index >= 0 && index < stok.Count)
