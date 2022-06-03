@@ -12,11 +12,18 @@ namespace ModuleEightTasks
         public double TotalSpace { get; }
         public double FreeSpace { get; }
 
+        Dictionary<string, Folder> Folders = new Dictionary<string, Folder>();
+
         public Drive(string name, long totalSpace, long freeSpace)
         {
             Name = name;
             TotalSpace = totalSpace;
             FreeSpace = freeSpace;
+
+            void CreateFolder(string folderName)
+            {
+                Folders.Add(folderName ,new Folder());
+            }
         }
     }
 }
