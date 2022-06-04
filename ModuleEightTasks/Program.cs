@@ -62,7 +62,7 @@
             }
         }
 
-        static void CountFoldersAndFiles()
+        static void CountFoldersAndFiles() // Task 8.2.1
         {
             try
             {
@@ -72,6 +72,19 @@
                 {
                     Console.WriteLine($" Количество папок: {dirInfo.GetDirectories().Length}\n Количество файлов: {dirInfo.GetFiles().Length}");
                 }
+
+                DirectoryInfo newDirectory = new DirectoryInfo(@"C:\newDirectory"); // Task 8.2.2
+                if (!newDirectory.Exists)
+                {
+                    newDirectory.Create();
+
+                    Console.WriteLine($"Название каталога: {newDirectory.Name}");
+                    Console.WriteLine($"Полное название каталога: {newDirectory.FullName}");
+                    Console.WriteLine($"Время создания каталога: {newDirectory.CreationTime}");
+                    Console.WriteLine($"Корневой каталог: {newDirectory.Root}");
+                }
+
+                Console.WriteLine($" Количество папок: {newDirectory.GetDirectories().Length}\n Количество файлов: {dirInfo.GetFiles().Length}");
             }
             catch(Exception e)
             {
