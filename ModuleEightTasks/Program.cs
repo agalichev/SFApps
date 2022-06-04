@@ -30,7 +30,9 @@
 
             Console.WriteLine();
 
-            CountFoldersAndFiles();
+            CountFoldersAndFiles(); // Метод подсчета количества папок и файлов в корневом каталоге
+
+            //CreateNewDirectory(); // Пример создания каталога в папке текущего пользователя
         }
 
         internal static void GetCatalogs()
@@ -75,6 +77,17 @@
             {
                 Console.WriteLine(e.Message);
             }
+        }
+
+        static void CreateNewDirectory()
+        {
+            DirectoryInfo dirInfo = new DirectoryInfo(@"C:\Users\lexga");
+            if (!dirInfo.Exists)
+            {
+                dirInfo.Create();
+            }
+
+            dirInfo.CreateSubdirectory("NewFolder");
         }
 
     }
