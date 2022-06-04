@@ -84,7 +84,13 @@
                     Console.WriteLine($"Корневой каталог: {newDirectory.Root}");
                 }
 
-                Console.WriteLine($" Количество папок: {newDirectory.GetDirectories().Length}\n Количество файлов: {dirInfo.GetFiles().Length}");
+                Console.WriteLine($" Количество папок: {dirInfo.GetDirectories().Length}\n Количество файлов: {dirInfo.GetFiles().Length}");
+
+                newDirectory.Delete(); // Task 8.2.3
+                Console.WriteLine(" Каталог удалён!");
+
+                Console.WriteLine($" Количество папок: {dirInfo.GetDirectories().Length}\n Количество файлов: {dirInfo.GetFiles().Length}");
+
             }
             catch(Exception e)
             {
