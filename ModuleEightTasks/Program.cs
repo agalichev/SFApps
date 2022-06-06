@@ -28,7 +28,18 @@
             // Получаем все папки и файлы корневого каталога
             //GetCatalogs();
 
-            MoveToTrash();
+            //MoveToTrash();
+
+            string filepath = @"C:\Users\lexga\OneDrive\Documents\CDEV-14\SFApps\ModuleEightTasks\Program.cs";
+
+            using(StreamReader sr = File.OpenText(filepath))
+            {
+                string str = "";
+                while((str = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(str);
+                }
+            }
 
             Console.WriteLine();
 
