@@ -30,16 +30,28 @@
 
             //MoveToTrash();
 
-            string filepath = @"C:\Users\lexga\OneDrive\Documents\CDEV-14\SFApps\ModuleEightTasks\Program.cs";
+            #region Task 8.3.1 Open and display Program.cs
+            //string filepath = @"C:\Users\lexga\OneDrive\Documents\CDEV-14\SFApps\ModuleEightTasks\Program.cs";
 
-            using(StreamReader sr = File.OpenText(filepath))
-            {
-                string str = "";
-                while((str = sr.ReadLine()) != null)
-                {
-                    Console.WriteLine(str);
-                }
-            }
+            //using(StreamReader sr = File.OpenText(filepath))
+            //{
+            //    string str = "";
+            //    while((str = sr.ReadLine()) != null)
+            //    {
+            //        Console.WriteLine(str);
+            //    }
+            //}
+            #endregion
+
+            #region Example of creation temporary file
+
+            string tempfile = Path.GetTempFileName();
+            var fileInfo = new FileInfo(tempfile);
+
+            Console.WriteLine(fileInfo.FullName);
+
+            #endregion
+
 
             Console.WriteLine();
 
