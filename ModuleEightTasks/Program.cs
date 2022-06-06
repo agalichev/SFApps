@@ -45,13 +45,30 @@
 
             #region Example of creation temporary file
 
-            string tempfile = Path.GetTempFileName();
-            var fileInfo = new FileInfo(tempfile);
+            //string tempfile = Path.GetTempFileName();
+            //var fileInfo = new FileInfo(tempfile);
 
-            Console.WriteLine(fileInfo.FullName);
+            //Console.WriteLine(fileInfo.FullName);
 
             #endregion
 
+            #region Task 8.3.2 Last run time
+            var fileInfo = new FileInfo(@"C:\Users\lexga\OneDrive\Documents\CDEV-14\SFApps\ModuleEightTasks\Program.cs");
+
+            using (StreamWriter sw = fileInfo.AppendText())
+            {
+                sw.WriteLine($"//Время запуска: {DateTime.Now}");
+            }
+
+            using (StreamReader sr = fileInfo.OpenText())
+            {
+                string str = "";
+                while ((str = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(str);
+                }
+            }
+            #endregion
 
             Console.WriteLine();
 
@@ -150,4 +167,4 @@
         }
 
     }
-}
+}//Время запуска: 07.06.2022 2:35:43
