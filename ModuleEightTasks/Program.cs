@@ -8,15 +8,15 @@
             #region DriveInfo using example
             // Получаем информацию о носителе
 
-            DriveInfo[] drives = DriveInfo.GetDrives();
+            //DriveInfo[] drives = DriveInfo.GetDrives();
 
-            foreach (DriveInfo drive in drives)
-            {
-                WriteDriveinfo(drive);
-                DirectoryInfo root = drive.RootDirectory;
-                var folders = root.GetDirectories();
-                WriteFolderInfo(folders);
-            }
+            //foreach (DriveInfo drive in drives)
+            //{
+            //    WriteDriveinfo(drive);
+            //    DirectoryInfo root = drive.RootDirectory;
+            //    var folders = root.GetDirectories();
+            //    WriteFolderInfo(folders);
+            //}
             #endregion
 
             // Directory using example
@@ -70,6 +70,9 @@
             //CountFoldersAndFiles(); // Метод подсчета количества папок и файлов в корневом каталоге
 
             //CreateNewDirectory(); // Пример создания каталога в папке текущего пользователя
+
+            string filePath = @"C:\Users\lexga\OneDrive\Рабочий стол\BinaryFile.bin";
+            ReadValues(filePath);
         }
 
         internal static void GetCatalogs()
@@ -196,6 +199,25 @@
         }
         #endregion
 
+        static void ReadValues(string path)
+        {
+            //string dateTime;
+            // string osType;
+            string fileData;
+            if (File.Exists(path))
+            {
+                using(BinaryReader reader = new BinaryReader(File.Open(path, FileMode.Open)))
+                {
+                    //dateTime = reader.ReadString();
+                    //osType = reader.ReadString();
+                    fileData = reader.ReadString();
+                }
+
+                //Console.WriteLine($"Дата и время: {dateTime}");
+                //Console.WriteLine($"Операционная система: {osType}");
+                Console.WriteLine(fileData);
+            }
+        }// Task 8.4.1
     }
 }//Время запуска: 07.06.2022 2:35:43
 //Время запуска: 08.06.2022 12:49:11
