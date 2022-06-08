@@ -1,7 +1,7 @@
 ﻿namespace ModuleEightTasks
 {
    public class Program
-    {
+   {
         public static void Main(string[] args)
         {
 
@@ -12,15 +12,10 @@
 
             foreach (DriveInfo drive in drives)
             {
-                Console.WriteLine($" Название: {drive.Name}");
-                Console.WriteLine($" Тип: {drive.DriveType}");
-
-                if (drive.IsReady)
-                {
-                    Console.WriteLine($" Объём: {drive.TotalSize} байт");
-                    Console.WriteLine($" Свободно: {drive.AvailableFreeSpace} байт");
-                    Console.WriteLine($" Метка: {drive.VolumeLabel}");
-                }
+                WriteDriveinfo(drive);
+                DirectoryInfo root = drive.RootDirectory;
+                var folders = root.GetDirectories();
+                WriteFolderInfo(folders);
             }
             #endregion
 
@@ -53,21 +48,21 @@
             #endregion
 
             #region Task 8.3.2 Last run time
-            var fileInfo = new FileInfo(@"C:\Users\lexga\OneDrive\Documents\CDEV-14\SFApps\ModuleEightTasks\Program.cs");
+            //var fileInfo = new FileInfo(@"C:\Users\lexga\OneDrive\Documents\CDEV-14\SFApps\ModuleEightTasks\Program.cs");
 
-            using (StreamWriter sw = fileInfo.AppendText())
-            {
-                sw.WriteLine($"//Время запуска: {DateTime.Now}");
-            }
+            //using (StreamWriter sw = fileInfo.AppendText())
+            //{
+            //    sw.WriteLine($"//Время запуска: {DateTime.Now}");
+            //}
 
-            using (StreamReader sr = fileInfo.OpenText())
-            {
-                string str = "";
-                while ((str = sr.ReadLine()) != null)
-                {
-                    Console.WriteLine(str);
-                }
-            }
+            //using (StreamReader sr = fileInfo.OpenText())
+            //{
+            //    string str = "";
+            //    while ((str = sr.ReadLine()) != null)
+            //    {
+            //        Console.WriteLine(str);
+            //    }
+            //}
             #endregion
 
             Console.WriteLine();
@@ -166,5 +161,34 @@
             }
         }
 
+        #region Video practice 8.2.1
+
+        static void WriteDriveinfo(DriveInfo drive) 
+        {      
+            Console.WriteLine($" Название: {drive.Name}");
+            Console.WriteLine($" Тип: {drive.DriveType}");
+            
+            if (drive.IsReady)
+            {
+                Console.WriteLine($" Объём: {drive.TotalSize} байт");
+                Console.WriteLine($" Свободно: {drive.AvailableFreeSpace} байт");
+                Console.WriteLine($" Метка: {drive.VolumeLabel}");
+            }
+        }
+
+        static void WriteFolderInfo(DirectoryInfo[] folders)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Папки: ");
+            Console.WriteLine();
+
+            foreach(var folder in folders)
+            {
+                Console.WriteLine(folder.Name);
+            }
+        }
+        #endregion
+
     }
 }//Время запуска: 07.06.2022 2:35:43
+//Время запуска: 08.06.2022 12:49:11
