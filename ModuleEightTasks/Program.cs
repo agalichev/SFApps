@@ -161,7 +161,7 @@
             }
         }
 
-        #region Video practice 8.2.1
+        #region Video practice 8.2.1, 8.3.1
 
         static void WriteDriveinfo(DriveInfo drive) 
         {      
@@ -176,15 +176,22 @@
             }
         }
 
-        static void WriteFolderInfo(DirectoryInfo[] folders)
+        static void WriteFolderInfo(DirectoryInfo[] folders) // Video Practice 8.2.1
         {
             Console.WriteLine();
             Console.WriteLine("Папки: ");
             Console.WriteLine();
 
-            foreach(var folder in folders)
+            foreach(var folder in folders) 
             {
-                Console.WriteLine(folder.Name);
+                try // Video Practice 8.3.1
+                {
+                    Console.WriteLine(folder.Name + $"- {DirectoryExtension.DirSize(folder)} байт");
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(folder.Name + $"- Не удалось рассчитать размер: {e.Message}");
+                }
             }
         }
         #endregion
