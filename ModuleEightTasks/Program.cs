@@ -1,4 +1,6 @@
-﻿namespace ModuleEightTasks
+﻿using System.Runtime.Serialization.Formatters.Binary;
+
+namespace ModuleEightTasks
 {
    public class Program
    {
@@ -71,8 +73,26 @@
 
             //CreateNewDirectory(); // Пример создания каталога в папке текущего пользователя
 
-            string filePath = @"C:\Users\lexga\OneDrive\Рабочий стол\BinaryFile.bin";
-            ReadValues(filePath);
+            //string filePath = @"C:\Users\lexga\OneDrive\Рабочий стол\BinaryFile.bin";
+            //WriteValues(filePath);
+            //ReadValues(filePath);
+
+            Contact newContact = new Contact("Александр", 89242195386, "lex.galichev@gmail.com");
+            Console.WriteLine("Объект создан!");
+
+            BinaryFormatter formatter = new BinaryFormatter();
+            using(var fs = new FileStream("Contact.bin", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, newContact);
+                Console.WriteLine("Объект сериализовван!");
+            }
+
+            using (var fs = new FileStream("Contact.bin", FileMode.OpenOrCreate))
+            {
+                var newContact2 = (Contact)formatter.Deserialize(fs);
+                Console.WriteLine("Объект десериализован!");
+                Console.WriteLine($"Name: {newContact2.Name}, Phone: {newContact2.PhoneNumber}, E-Mail: {newContact2.Email}");
+            }
         }
 
         internal static void GetCatalogs()
@@ -218,6 +238,28 @@
                 Console.WriteLine(fileData);
             }
         }// Task 8.4.1
+        static void WriteValues(string path) // Task 8.4.2
+        {
+            using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.Create)))
+            {
+                writer.Write($" Файл изменен {DateTime.Now} на компьютере {Environment.OSVersion}");
+            }
+        }
+        
+        [Serializable]
+        class Contact
+        {
+            public string Name { get; set; }
+            public long PhoneNumber { get; set; }
+            public string Email { get; set; }
+
+            public Contact(string name, long phoneNumber, string email)
+            {
+                Name = name;
+                PhoneNumber = phoneNumber;
+                Email = email;
+            }
+        }
     }
 }//Время запуска: 07.06.2022 2:35:43
 //Время запуска: 08.06.2022 12:49:11
