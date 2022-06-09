@@ -4,21 +4,31 @@ namespace ModuleEightTasks
 {
    public class Program
    {
+        public static FileInfo configFile = new FileInfo(@"SystemConfig.txt"); // Video practice 8.5.1 (см. ниже классы)
         public static void Main(string[] args)
         {
-
             #region DriveInfo using example
             // Получаем информацию о носителе
 
-            //DriveInfo[] drives = DriveInfo.GetDrives();
+            DriveInfo[] drives = DriveInfo.GetDrives();
 
-            //foreach (DriveInfo drive in drives)
-            //{
-            //    WriteDriveinfo(drive);
-            //    DirectoryInfo root = drive.RootDirectory;
-            //    var folders = root.GetDirectories();
-            //    WriteFolderInfo(folders);
-            //}
+            foreach (DriveInfo drive in drives)
+            {
+                
+                DirectoryInfo root = drive.RootDirectory;
+                var folders = root.GetDirectories();
+
+                Console.WriteLine($"Сканируем диск {drive.Name}");
+
+                using(StreamWriter sw = configFile.AppendText())
+                {
+                    WriteDriveinfo(drive, sw);
+                    WriteFolderInfo(folders, sw);
+                }
+                
+                Console.WriteLine("Завершено");
+                Console.WriteLine("_________");
+            }
             #endregion
 
             // Directory using example
@@ -77,22 +87,22 @@ namespace ModuleEightTasks
             //WriteValues(filePath);
             //ReadValues(filePath);
 
-            Contact newContact = new Contact("Александр", 89242195386, "lex.galichev@gmail.com");
-            Console.WriteLine("Объект создан!");
+            //Contact newContact = new Contact("Александр", 89242195386, "lex.galichev@gmail.com");
+            //Console.WriteLine("Объект создан!");
 
-            BinaryFormatter formatter = new BinaryFormatter();
-            using(var fs = new FileStream("Contact.bin", FileMode.OpenOrCreate))
-            {
-                formatter.Serialize(fs, newContact);
-                Console.WriteLine("Объект сериализовван!");
-            }
+            //BinaryFormatter formatter = new BinaryFormatter();
+            //using(var fs = new FileStream("Contact.bin", FileMode.OpenOrCreate))
+            //{
+            //    formatter.Serialize(fs, newContact);
+            //    Console.WriteLine("Объект сериализовван!");
+            //}
 
-            using (var fs = new FileStream("Contact.bin", FileMode.OpenOrCreate))
-            {
-                var newContact2 = (Contact)formatter.Deserialize(fs);
-                Console.WriteLine("Объект десериализован!");
-                Console.WriteLine($"Name: {newContact2.Name}, Phone: {newContact2.PhoneNumber}, E-Mail: {newContact2.Email}");
-            }
+            //using (var fs = new FileStream("Contact.bin", FileMode.OpenOrCreate))
+            //{
+            //    var newContact2 = (Contact)formatter.Deserialize(fs);
+            //    Console.WriteLine("Объект десериализован!");
+            //    Console.WriteLine($"Name: {newContact2.Name}, Phone: {newContact2.PhoneNumber}, E-Mail: {newContact2.Email}");
+            //}
         }
 
         internal static void GetCatalogs()
@@ -184,36 +194,36 @@ namespace ModuleEightTasks
             }
         }
 
-        #region Video practice 8.2.1, 8.3.1
+        #region Video practice 8.2.1, 8.3.1, 8.5.1
 
-        static void WriteDriveinfo(DriveInfo drive) 
+        static void WriteDriveinfo(DriveInfo drive, StreamWriter sw) 
         {      
-            Console.WriteLine($" Название: {drive.Name}");
-            Console.WriteLine($" Тип: {drive.DriveType}");
+            sw.WriteLine($" Название: {drive.Name}");
+            sw.WriteLine($" Тип: {drive.DriveType}");
             
             if (drive.IsReady)
             {
-                Console.WriteLine($" Объём: {drive.TotalSize} байт");
-                Console.WriteLine($" Свободно: {drive.AvailableFreeSpace} байт");
-                Console.WriteLine($" Метка: {drive.VolumeLabel}");
+                sw.WriteLine($" Объём: {drive.TotalSize} байт");
+                sw.WriteLine($" Свободно: {drive.AvailableFreeSpace} байт");
+                sw.WriteLine($" Метка: {drive.VolumeLabel}");
             }
         }
 
-        static void WriteFolderInfo(DirectoryInfo[] folders) // Video Practice 8.2.1
+        static void WriteFolderInfo(DirectoryInfo[] folders, StreamWriter sw) // Video Practice 8.2.1
         {
-            Console.WriteLine();
-            Console.WriteLine("Папки: ");
-            Console.WriteLine();
+            sw.WriteLine();
+            sw.WriteLine("Папки: ");
+            sw.WriteLine();
 
             foreach(var folder in folders) 
             {
                 try // Video Practice 8.3.1
                 {
-                    Console.WriteLine(folder.Name + $"- {DirectoryExtension.DirSize(folder)} байт");
+                    sw.WriteLine(folder.Name + $"- {DirectoryExtension.DirSize(folder)} байт");
                 }
                 catch(Exception e)
                 {
-                    Console.WriteLine(folder.Name + $"- Не удалось рассчитать размер: {e.Message}");
+                    sw.WriteLine(folder.Name + $"- Не удалось рассчитать размер: {e.Message}");
                 }
             }
         }
