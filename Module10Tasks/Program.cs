@@ -24,6 +24,15 @@
             Worker2 worker2 = new Worker2();
             ((IWorker1)worker2).Build();
 
+            // Task 10.3.1
+            IWriter1 writer1 = new FileManager();
+            IReader reader = new FileManager();
+            IMailer mailer = new FileManager();
+
+            writer1.Write1();
+            reader.Read();
+            mailer.SendEmail();
+
             Console.ReadLine();
         }
     }
@@ -98,5 +107,97 @@
     public class Worker2 : IWorker1
     {
         void IWorker1.Build(){}
+    }
+
+    // Task 10.3.1
+    public interface IWriter1
+    {
+        void Write1();
+    }
+
+    public interface IReader
+    {
+        void Read();
+    }
+
+    public interface IMailer
+    {
+        void SendEmail();
+    }
+
+    public class FileManager : IWriter1, IReader, IMailer
+    {
+        void IWriter1.Write1()
+        {
+            Console.WriteLine("Записываем файл..");
+        }
+
+        void IReader.Read()
+        {
+            Console.WriteLine("Читаем фвйл..");
+        }
+
+        void IMailer.SendEmail()
+        {
+            Console.WriteLine("Отправляем сообщение..");
+        }
+    }
+
+    // Task 10.3.2
+    public interface ICreatable
+    {
+        void Create();
+    }
+
+    public interface IDeletable
+    {
+        void Delete();
+    }
+
+    public interface IUpdatable
+    {
+        void Update();
+    }
+
+    public class Entity : ICreatable, IDeletable, IUpdatable
+    {
+        public void Create()
+        {
+        }
+
+        public void Delete()
+        {
+        }
+
+        public void Update()
+        {
+        }
+    }
+
+    // Task 10.3.3
+    public interface IBook
+    {
+        void Read();
+    }
+
+    public interface IDevice
+    {
+        void TurnOn();
+        void TurnOff();
+    }
+
+    public class ElectronicBook : IBook, IDevice
+    {
+        void IBook.Read()
+        {
+        }
+
+        void IDevice.TurnOff()
+        {
+        }
+
+        void IDevice.TurnOn()
+        {
+        }
     }
 }
