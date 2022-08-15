@@ -33,6 +33,11 @@
             reader.Read();
             mailer.SendEmail();
 
+            // Task 10.4.4
+            var account = new Account();
+            IUpdater<Account> updater = new UserService();
+            updater.Update(account);
+
             Console.ReadLine();
         }
     }
@@ -199,5 +204,19 @@
         void IDevice.TurnOn()
         {
         }
+    }
+
+    // Task 10.4.4
+
+    public class User{}
+    public class Account : User{}
+    public interface IUpdater<in T>
+    {
+       void Update(T entity);
+    }
+
+    public class UserService : IUpdater<User>
+    {
+        public void Update(User entity){}
     }
 }
