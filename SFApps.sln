@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module10Tasks", "Module10Ta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module11VoiceTexterBot", "Module11VoiceTexterBot\Module11VoiceTexterBot.csproj", "{0FD8AAE9-059F-4E65-A831-428CC98EE081}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module11SimpleBot", "Module11SimpleBot\Module11SimpleBot.csproj", "{B82E8C1E-0AAB-4F1C-9837-A1D875356A2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module11SimpleBot", "Module11SimpleBot\Module11SimpleBot.csproj", "{B82E8C1E-0AAB-4F1C-9837-A1D875356A2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module12Tasks", "Module12Tasks\Module12Tasks.csproj", "{B9E41EB5-C864-4BBD-98AF-86D9A3DD931A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{B82E8C1E-0AAB-4F1C-9837-A1D875356A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B82E8C1E-0AAB-4F1C-9837-A1D875356A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B82E8C1E-0AAB-4F1C-9837-A1D875356A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9E41EB5-C864-4BBD-98AF-86D9A3DD931A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9E41EB5-C864-4BBD-98AF-86D9A3DD931A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9E41EB5-C864-4BBD-98AF-86D9A3DD931A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9E41EB5-C864-4BBD-98AF-86D9A3DD931A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
