@@ -1,9 +1,24 @@
-﻿namespace Module13Tasks
+﻿using System.Collections;
+
+namespace Module13Tasks
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            ArrayList input = new ArrayList()
+            {
+                1,
+                "One",
+                23,
+                "PunchMan",
+                43,
+                "anime"
+            };
+
+            foreach(var element in Task13_2_6.OptimizeArrayList(input))
+                Console.WriteLine(element);
+
             var month = new[]
             {
                 "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
