@@ -6,6 +6,11 @@ namespace Module13Tasks
     {
         static void Main(string[] args)
         {
+            string text = "Подсчитайте, сколько уникальных символов в этом предложении, используя HashSet<T>, " +
+                           "учитывая знаки препинания, но не учитывая пробелы в начале и в конце предложения.";
+
+            Console.WriteLine(Task13_3_10.GetLettersCount(text));
+
             var months = new List<string>()
             {
                 "Jan", "Feb", "Mar", "Apr", "May"
