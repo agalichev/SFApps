@@ -6,14 +6,26 @@ namespace Module13Tasks
     {
         static void Main(string[] args)
         {
-            List<Contact> phoneBook = new List<Contact>();
+            var months = new List<string>()
+            {
+                "Jan", "Feb", "Mar", "Apr", "May"
+            };
 
-            phoneBook.Add(new Contact("Андрей", 89242223344, "andrey@gmail.com"));
-            phoneBook.Add(new Contact("Игорь", 89143332333, "igor@yandex.ru"));
-            phoneBook.Add(new Contact("Алина", 89242128899, "alina@outlook.com"));
+            var missing = new ArrayList()
+            {
+                1, 2, 3, 5, "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+            };
 
-            //Task13_3_4.AddUnique(new Contact("Валентина", 89145556565, "valya@gmail.com"), phoneBook);
-            Task13_3_4.AddUnique(new Contact("Алина", 89242128898, "alina@outlook.com"), phoneBook);
+            Task13_3_5.ModifyCollection(months, missing);
+
+            //List<Contact> phoneBook = new List<Contact>();
+
+            //phoneBook.Add(new Contact("Андрей", 89242223344, "andrey@gmail.com"));
+            //phoneBook.Add(new Contact("Игорь", 89143332333, "igor@yandex.ru"));
+            //phoneBook.Add(new Contact("Алина", 89242128899, "alina@outlook.com"));
+
+            ////Task13_3_4.AddUnique(new Contact("Валентина", 89145556565, "valya@gmail.com"), phoneBook);
+            //Task13_3_4.AddUnique(new Contact("Алина", 89242128898, "alina@outlook.com"), phoneBook);
 
             //ArrayList input = new ArrayList()
             //{
