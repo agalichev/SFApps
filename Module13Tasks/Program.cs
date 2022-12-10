@@ -1,27 +1,87 @@
 ﻿using System.Collections;
+using System.Diagnostics;
 
 namespace Module13Tasks
 {
     internal class Program
     {
+        private static Dictionary<string, Contact2> PhoneBook = new Dictionary<string, Contact2>()
+        {
+            ["Татьяна"] = new Contact2(89242666778, "tanya@gmail.com"),
+            ["Виктор"] = new Contact2(89141145533, "vitya@gmail.com")
+        };
+
+        private static SortedDictionary<string, Contact2> SortedPhoneBook = new SortedDictionary<string, Contact2>()
+        {
+            ["Татьяна"] = new Contact2(89242666778, "tanya@gmail.com"),
+            ["Виктор"] = new Contact2(89141145533, "vitya@gmail.com")
+        };
+
         static void Main(string[] args)
         {
-            string text = "Подсчитайте, сколько уникальных символов в этом предложении, используя HashSet<T>, " +
-                           "учитывая знаки препинания, но не учитывая пробелы в начале и в конце предложения.";
+            //Task 13.5.4
+            Task13_5_4.OperateStack();
 
-            Console.WriteLine(Task13_3_10.GetLettersCount(text));
+            // Применяем Dictionary<TKey, TValue>
 
-            var months = new List<string>()
-            {
-                "Jan", "Feb", "Mar", "Apr", "May"
-            };
+            //Console.WriteLine("Текущий список контактов:");
 
-            var missing = new ArrayList()
-            {
-                1, 2, 3, 5, "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-            };
+            //ShowAllContacts();
 
-            Task13_3_5.ModifyCollection(months, missing);
+            //var watchOne = Stopwatch.StartNew();
+
+            //PhoneBook.TryAdd("Андрей", new Contact2(89148887644, "andrey@gmail.com"));
+
+            //Console.WriteLine($"Вставка в словарь: {watchOne.Elapsed.TotalMilliseconds} мс");
+
+            //Console.WriteLine("Список контактов обновился:");
+
+            //ShowAllContacts();
+
+            //if (PhoneBook.TryGetValue("Андрей", out Contact2 contact))
+            //    contact.PhoneNumber = 89149998989;
+
+            //Console.WriteLine("Был изменен один из контактов:");
+
+            //ShowAllContacts();
+
+            // Применяем SortedDictionary<TKey, TValue>
+
+            //var watchTwo = Stopwatch.StartNew();
+
+            //SortedPhoneBook.TryAdd("Андрей", new Contact2(89148887644, "andrey@gmail.com"));
+
+            //Console.WriteLine($"Вставка в сортированный словарь: {watchTwo.Elapsed.TotalMilliseconds} мс");
+
+            //do
+            //{
+            //    Console.Write("Введите текст: \n>>");
+
+            //    var myText = Console.ReadLine();
+
+            //    Console.WriteLine(Task13_3_10.GetLettersCount(myText));
+
+            //    Console.WriteLine("Пожалуйста, продолжайте!\n");
+
+            //}
+            //while (true);
+
+            //string text = "Подсчитайте, сколько уникальных символов в этом предложении, используя HashSet<T>, " +
+            //               "учитывая знаки препинания, но не учитывая пробелы в начале и в конце предложения.";
+
+            //Console.WriteLine(Task13_3_10.GetLettersCount(text));
+
+            //var months = new List<string>()
+            //{
+            //    "Jan", "Feb", "Mar", "Apr", "May"
+            //};
+
+            //var missing = new ArrayList()
+            //{
+            //    1, 2, 3, 5, "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+            //};
+
+            //Task13_3_5.ModifyCollection(months, missing);
 
             //List<Contact> phoneBook = new List<Contact>();
 
@@ -70,6 +130,11 @@ namespace Module13Tasks
             Console.ReadLine();
         }
 
-
+        static void ShowAllContacts()
+        {
+            foreach (var contact in PhoneBook)
+                Console.WriteLine(contact.Key + ": " + contact.Value.PhoneNumber);
+            Console.WriteLine();
+        }
     }
 }
