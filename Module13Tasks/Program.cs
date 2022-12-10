@@ -20,7 +20,7 @@ namespace Module13Tasks
         static void Main(string[] args)
         {
             //Task 13.5.4
-            Task13_5_4.OperateStack();
+            Task13_5_4.OperateStackMyVersion();
 
             // Применяем Dictionary<TKey, TValue>
 

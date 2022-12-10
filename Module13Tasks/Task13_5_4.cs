@@ -9,7 +9,7 @@ namespace Module13Tasks
     public static class Task13_5_4
     {
         public static Stack<string> words = new Stack<string>();
-        public static void OperateStack()
+        public static void OperateStackMyVersion()
         {
             while (true)
             {
