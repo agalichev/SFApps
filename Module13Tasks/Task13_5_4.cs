@@ -71,5 +71,53 @@ namespace Module13Tasks
                 }
             }
         }
+
+        public static void OperateStackSF()
+        {
+            while (true)
+            {
+                Console.Write("Введите команду <pop> или <peek>, чтобы извлечь или получить последний элемент(сверху) из стека: ");
+
+                var input = Console.ReadLine();
+
+                switch (input)
+                {
+                    case "pop":
+
+                        if (!words.TryPop(out string popResult))
+                            Console.WriteLine("Стек пуст!");
+                        else
+                            Console.WriteLine($"Извлекаем последний элемент: {popResult}");
+
+                        break;
+
+                    case "peek":
+
+                        if (!words.TryPeek(out string peekResult))
+                            Console.WriteLine("Стек пуст!");
+                        else
+                            Console.WriteLine($"Получаем последний элемент: {peekResult}");
+
+                        break;
+
+                    default:
+
+                        Console.Write("Введите слово и нажмите Enter, чтобы добавить его в стек: ");
+
+                        input = Console.ReadLine();
+
+                        words.Push(input);
+
+                        Console.WriteLine("В стеке:");
+
+                        foreach (var word in words)
+                            Console.WriteLine(" " + word);
+
+                        Console.WriteLine();
+
+                        break;
+                }
+            }  
+        }
     }
 }
