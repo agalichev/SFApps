@@ -19,9 +19,12 @@ namespace Module13Tasks
 
         static void Main(string[] args)
         {
+            //Task 13.5.8
+            Task13_5_8.ConcurrentQueueOperateMyVersion();
+
             //Task 13.5.4
             //Task13_5_4.OperateStackMyVersion();
-            Task13_5_4.OperateStackSF();
+            //Task13_5_4.OperateStackSF();
 
             // Применяем Dictionary<TKey, TValue>
 
